@@ -9,9 +9,12 @@
   <style>
     :root {
       --primary: #005577;
+      --accent: #ff7f50;
       --background: #ffffff;
       --foreground: #000000;
       --card-bg: #f5f5f5;
+      --hover-bg: #e6f2f7;
+      --gradient-background: linear-gradient(135deg, #005577, #0077b6);
     }
     * {
       box-sizing: border-box;
@@ -22,28 +25,36 @@
       font-family: 'Rubik', sans-serif;
       background: var(--background);
       color: var(--foreground);
+      overflow-x: hidden;
     }
+    /* ===== Header ===== */
     header {
-      background: #f0f0f0;
+      background: var(--gradient-background);
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 5rem 2rem;
+      color: white;
+      position: relative;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     }
     header img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--primary);
+      border: 4px solid white;
       margin-bottom: 1rem;
+      transition: transform 0.3s ease-in-out;
     }
+    header img:hover { transform: scale(1.1); }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-    header .title {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #333;
+    header h1:hover {
+      color: var(--accent);
+      transform: scale(1.1);
     }
+    header .title { font-size: 1.2rem; margin-top: 0.5rem; }
     .btn {
       margin-top: 1rem;
       background: var(--primary);
@@ -53,54 +64,110 @@
       border-radius: 5px;
       text-decoration: none;
       display: inline-block;
+      transition: transform 0.3s ease-in-out, background 0.3s;
     }
+    .btn:hover { background: #003b46; transform: scale(1.1); }
+
+    /* ===== Navbar ===== */
     nav {
       background: var(--primary);
       padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
     }
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+      padding: 5px;
+      transition: all 0.3s ease;
     }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: white;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+
+    /* ===== Sections ===== */
     section {
       padding: 4rem 2rem;
       max-width: 1000px;
       margin: auto;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
     }
     .section-title {
       font-size: 2rem;
       margin-bottom: 2rem;
       text-align: center;
       color: var(--primary);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      position: relative;
     }
+    .section-title:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      left: 50%;
+      bottom: -8px;
+      background: var(--accent);
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    .section-title:hover::after {
+      width: 60%;
+    }
+
+    /* ===== Grid & Cards ===== */
     .grid {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
+      opacity: 0;
+      animation: fadeInUp 1.2s forwards;
     }
     .card {
       background: var(--card-bg);
       border-radius: 10px;
       padding: 1.5rem;
       flex: 1 1 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeInUp 1.4s forwards;
     }
-    .card a {
-      color: var(--primary);
-      text-decoration: none;
-      display: block;
-      margin-top: 1rem;
-    }
+    .card:hover { transform: scale(1.05); background: var(--hover-bg); }
+
+    /* ===== Carousel ===== */
     .carousel {
       width: 100%;
       height: 180px;
       overflow: hidden;
       border-radius: 10px;
       margin-bottom: 1rem;
+      position: relative;
     }
     .carousel img {
       width: 100%;
@@ -108,22 +175,24 @@
       object-fit: cover;
       display: none;
     }
-    .carousel img.active {
-      display: block;
-    }
+    .carousel img.active { display: block; }
+
+    /* ===== Languages ===== */
     .language-icons {
       font-size: 1.5rem;
       text-align: center;
     }
-    .language-icons i {
-      margin: 0.5rem;
-    }
+    .language-icons i { margin: 0.5rem; }
+
+    /* ===== Footer ===== */
     footer {
       background: #e6e6e6;
       color: #333;
       text-align: center;
       padding: 2rem 1rem;
     }
+
+    /* ===== Contact Form ===== */
     form input, form textarea {
       width: 100%;
       padding: 0.75rem;
@@ -132,6 +201,22 @@
       background: #fff;
       color: #000;
       border-radius: 5px;
+    }
+    form button {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    form button:hover { background: #003b46; transform: scale(1.05); }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -169,14 +254,12 @@
   <section id="projects">
     <h2 class="section-title">Projects</h2>
     <div class="grid">
-   
       <div class="card">
         <div class="carousel" data-carousel>
           <img src="technova.png" class="active" />
-       
         </div>
         <h3>TechNova Website</h3>
-        <p>It is a software company management system that displays its projects and provides the opportunity to display its services and projects.</p>
+        <p>A software company management system to showcase services and projects.</p>
         <p><strong>Technologies:</strong> Python, Chart.js, Flask, Vue.js</p>
         <a href="https://rainy-ox-technova-8984e8d8.koyeb.app">View Project</a>
       </div>
@@ -184,14 +267,13 @@
         <div class="carousel" data-carousel>
           <img src="فندق1.png" class="active" />
           <img src="فندق2.png" />
-        
         </div>
         <h3>Hotel Reservation System</h3>
         <p>Booking platform with full-stack integration.</p>
         <p><strong>Technologies:</strong> PHP, Laravel, JavaScript, MySQL</p>
         <a href="https://hnali-porject.infinityfreeapp.com/">View Project</a>
       </div>
-         <div class="card">
+      <div class="card">
         <div class="carousel" data-carousel>
           <img src="dev1.png" class="active" />
           <img src="dev2.png" />
@@ -211,7 +293,7 @@
         </div>
         <h3>Medical Clinic System</h3>
         <p>A Medical Booking Management system that connects users with doctors to help book appointments for doctor visits.</p>
-        <p><strong>Technologies:</strong> React, Node js, Express js, MongoDB</p>
+        <p><strong>Technologies:</strong> React, Node.js, Express.js, MongoDB</p>
         <a href="https://medical-clinic-management-system.vercel.app">View Project</a>
       </div>
     </div>
@@ -237,7 +319,7 @@
       <strong>Email:</strong> mohamadit102@gmail.com<br>
       <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohamad-ali-96806b263/" target="_blank">mohamad-ali</a><br>
       <strong>Portfolio:</strong> <a href="https://moh102moh.github.io/portfolio/" target="_blank">moh102moh.github.io</a><br>
-      <strong>Location:</strong> Amman, Jordan
+      <strong>Location:</strong> Damascus, Syria 
     </p>
   </section>
 
@@ -259,6 +341,3 @@
   </script>
 </body>
 </html>
-
-
-
