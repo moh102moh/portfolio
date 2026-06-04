@@ -1,550 +1,471 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eng. Mohamad Ali | Software Engineer & Full-Stack Developer</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eng. Mohamad Ali | Software Engineer & Full-Stack Developer</title>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#3b82f6', // Blue 500
-                        secondary: '#1e293b', // Slate 800
-                        darkBg: '#0f172a', // Slate 900
-                    }
-                }
-            }
-        }
-    </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-        .project-img-wrapper {
-            overflow: hidden;
-            border-radius: 0.5rem 0.5rem 0 0;
-        }
-        .project-img {
-            transition: transform 0.5s ease;
-        }
-    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#1e293b',
+            darkBg: '#0f172a',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #0f172a; color: #f8fafc; }
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .project-card:hover .project-img { transform: scale(1.05); }
+    .project-img-wrapper { overflow: hidden; border-radius: 0.75rem 0.75rem 0 0; }
+    .project-img { transition: transform 0.5s ease; }
+    .glass {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+    }
+  </style>
 </head>
+
 <body class="antialiased selection:bg-primary selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0 font-bold text-xl tracking-wider">
-                    <span class="text-primary">&lt;</span> Eng. Mohamad <span class="text-primary">/&gt;</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#services" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                        <a href="#projects" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="https://wa.me/9630945852707" target="_blank" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition shadow-lg shadow-blue-500/30">
-                            Let's Talk
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0 font-bold text-xl tracking-wider">
+          <span class="text-primary">&lt;</span> Eng. Mohamad <span class="text-primary">/&gt;</span>
         </div>
-    </nav>
-
-    <header id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen">
-        <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
-            <p class="text-primary font-semibold tracking-wide uppercase mb-2">Systems Analyst & Developer</p>
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Mohamad <span class="gradient-text">Ali</span></h1>
-            <h2 class="text-2xl md:text-3xl text-slate-400 font-medium mb-6">Software Engineer & Full-Stack Developer</h2>
-            <p class="text-slate-300 leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-                I specialize in building full-stack web applications and SaaS platforms from the ground up. Over the past 4 years, I have focused on writing clean code, architecting scalable databases, and delivering systems that solve direct operational needs.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#projects" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-code"></i> View Portfolio
-                </a>
-                <a href="https://wa.me/9630945852707" target="_blank" class="border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white px-8 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> +963 0945852707
-                </a>
-            </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#about" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="#impact" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Impact</a>
+            <a href="#skills" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+            <a href="#projects" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+            <a href="https://wa.me/9630945852707" target="_blank" rel="noreferrer" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition shadow-lg shadow-blue-500/30">
+              Let's Talk
+            </a>
+          </div>
         </div>
-        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-slate-800 shadow-2xl overflow-hidden shadow-primary/20">
-                <img src="1234.jpg" alt="Mohamad Ali" class="object-cover w-full h-full" onerror="this.src='https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'">
-            </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen gap-12">
+    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+      <p class="text-primary font-semibold tracking-[0.22em] uppercase mb-3 text-sm">Full-Stack Software Engineer</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Mohamad <span class="gradient-text">Ali</span></h1>
+      <h2 class="text-2xl md:text-3xl text-slate-300 font-medium mb-6">Software Engineer & Product Builder</h2>
+
+      <p class="text-slate-300 leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 text-[1.03rem]">
+        I build production-ready web systems from the ground up: dashboards, SaaS platforms, booking engines, and custom tools.
+        My focus is clear architecture, reliable deployment, and practical business outcomes.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="#projects" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-code"></i> View Live Work
+        </a>
+        <a href="https://wa.me/9630945852707" target="_blank" rel="noreferrer" class="border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white px-8 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i> +963 0945852707
+        </a>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+      <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-slate-800 shadow-2xl overflow-hidden shadow-primary/20">
+        <img src="1234.jpg" alt="Mohamad Ali" class="object-cover w-full h-full" onerror="this.src='https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'" />
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 pb-8" data-aos="fade-up">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass border border-slate-800 rounded-2xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-white">5+</div>
+        <div class="text-sm text-slate-400 mt-1">Projects completed</div>
+      </div>
+      <div class="glass border border-slate-800 rounded-2xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-white">6</div>
+        <div class="text-sm text-slate-400 mt-1">Clients served</div>
+      </div>
+      <div class="glass border border-slate-800 rounded-2xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-white">18</div>
+        <div class="text-sm text-slate-400 mt-1">Active field projects</div>
+      </div>
+      <div class="glass border border-slate-800 rounded-2xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-white">24</div>
+        <div class="text-sm text-slate-400 mt-1">Daily reports handled</div>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 mt-3 text-center">
+      Numbers above are taken from the live company/product pages I worked on.
+    </p>
+  </section>
+
+  <section id="about" class="py-20 bg-secondary/20 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start gap-12">
+        <div class="md:w-1/3" data-aos="fade-right">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-primary">Me</span></h2>
+          <div class="w-20 h-1 bg-primary rounded"></div>
         </div>
-    </header>
-
-    <section id="about" class="py-20 bg-secondary/20 border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/3" data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-primary">Me</span></h2>
-                    <div class="w-20 h-1 bg-primary rounded"></div>
-                </div>
-                <div class="md:w-2/3 text-slate-300 leading-relaxed space-y-4" data-aos="fade-left">
-                    <p>
-                        With a solid academic foundation in <strong>Software Engineering</strong>, I specialize in the full lifecycle of software development. I handle everything from database schema design to backend API architecture and dynamic frontend implementation.
-                    </p>
-                    <p>
-                        I take a pragmatic approach to development. Whether it's processing complex geometric calculations on a web canvas, configuring <strong>Linux servers (Ubuntu/Nginx)</strong>, or integrating AI APIs for automated workflows, my goal is to deliver stable and maintainable systems. 
-                    </p>
-                    <p>
-                        I have successfully built and deployed over 10 production-ready platforms entirely from scratch, ensuring complete control over the technical stack without relying on bloated templates.
-                    </p>
-                </div>
-            </div>
+        <div class="md:w-2/3 text-slate-300 leading-relaxed space-y-4 text-[1.02rem]" data-aos="fade-left">
+          <p>
+            I work across the full software lifecycle: requirements, system analysis, database design, backend APIs, frontend delivery,
+            and production deployment.
+          </p>
+          <p>
+            My strongest work is in custom platforms where business logic matters: reservation systems, field-ops dashboards,
+            internal management tools, and data-heavy applications.
+          </p>
+          <p>
+            I prefer clean architecture over template-based shortcuts, and I build systems to be maintainable, scalable, and ready for real users.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="services" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Core <span class="text-primary">Capabilities</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Practical engineering skills focused on building and maintaining web applications.</p>
-            </div>
+  <section id="impact" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Selected <span class="text-primary">Impact</span></h2>
+        <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+        <p class="text-slate-400 mt-4 max-w-3xl mx-auto">
+          Cleanly quantified product work, focused on live usage, operations, and stability.
+        </p>
+      </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-server"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Backend & API Systems</h3>
-                    <p class="text-sm text-slate-400">Developing custom RESTful APIs using Node.js and Express, connected to well-structured MySQL relational databases for optimal querying.</p>
-                </div>
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Frontend Development</h3>
-                    <p class="text-sm text-slate-400">Building interactive and fast user interfaces using Next.js and React, including complex logic handling like HTML5 Canvas integrations.</p>
-                </div>
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-brands fa-linux"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Infrastructure & DevOps</h3>
-                    <p class="text-sm text-slate-400">Configuring and managing Linux production environments, Nginx routing, and DNS setups to ensure applications remain online and secure.</p>
-                </div>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 class="text-xl font-bold mb-2">Operational Platforms</h3>
+          <p class="text-sm text-slate-400">Built systems that centralize tasks, reports, approvals, and delivery flows into one clear operating process.</p>
         </div>
-    </section>
-
-    <section id="skills" class="py-20 bg-secondary/20 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical <span class="text-primary">Stack</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Frontend & Mobile</h3>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Next.js & React.js</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> HTML5 Canvas Logic</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Tailwind CSS</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Flutter (Cross-platform)</li>
-                    </ul>
-                </div>
-
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-database"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Backend & Data</h3>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Node.js & Express.js</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> MySQL Schema Design</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Python (Data/Scripts)</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> RESTful API Dev</li>
-                    </ul>
-                </div>
-
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-microchip"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Operations & Tools</h3>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Linux (Ubuntu) Server Setup</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Nginx & Reverse Proxies</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Git & Version Control</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> API Integrations (LLMs, etc)</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-database"></i></div>
+          <h3 class="text-xl font-bold mb-2">Data-Driven Backends</h3>
+          <p class="text-sm text-slate-400">Designed relational schemas, optimized queries, and connected secure APIs for systems with real transaction and workflow demands.</p>
         </div>
-    </section>
-
-    <section id="projects" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Production <span class="text-primary">Projects</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Live platforms grouped by the respective companies I collaborated with. Built purely from scratch.</p>
-            </div>
-
-            <div class="mt-12 mb-8" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Foundr-x Projects</h3>
-                <p class="text-sm text-slate-400 mt-2">A major portion of my architectural, infrastructure, and field management systems.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chafaq Field Ops" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Chafaq Field Ops Platform</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
-                                <p><strong class="text-white">Scope:</strong> Built a centralized field management system from scratch to track on-ground operations.</p>
-                                <p><strong class="text-primary">Impact:</strong> Processed continuous sync events between field agents and the management dashboard, eliminating manual data entry delays.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://chafaq.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Check-in-sy" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Check-in-sy System</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Backend & Web Developer</p>
-                                <p><strong class="text-white">Scope:</strong> Built the entire backend infrastructure and Next.js admin dashboard from scratch, while a colleague developed the mobile application.</p>
-                                <p><strong class="text-primary">Impact:</strong> Developed robust APIs handling continuous location pings to monitor user activity in real-time.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Express.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                            </div>
-                            <a href="https://app.check-in-sy.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Promaster" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Promaster Service Portal</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
-                                <p><strong class="text-white">Scope:</strong> A complete service booking platform for an automotive care company.</p>
-                                <p><strong class="text-primary">Impact:</strong> Managed the end-to-end development, successfully resolving specific domain-routing challenges to ensure stable public access.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Express.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://promaster.sa/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Foundr-x" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Foundr-x Infrastructure</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Developer & Server Admin</p>
-                                <p><strong class="text-white">Scope:</strong> Corporate web application and underlying server setup.</p>
-                                <p><strong class="text-primary">Impact:</strong> Built a fast Next.js (SSR) application and independently configured the Linux/Nginx server environment from scratch for production.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js (SSR)</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Linux Setup</span>
-                            </div>
-                            <a href="https://foundr-x.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ropicks" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Ropicks E-Commerce</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
-                                <p><strong class="text-white">Scope:</strong> Built a custom e-commerce engine for gaming products.</p>
-                                <p><strong class="text-primary">Impact:</strong> Developed independent cart logic and product schemas, ensuring fast page loads without using heavy pre-built CMS systems.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://ropicks.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-12 mb-8" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">TechnoPro Projects</h3>
-                <p class="text-sm text-slate-400 mt-2">Analytical and management platforms tailored for diverse operational needs.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hotel System" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Hotel Reservation System</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
-                                <p><strong class="text-white">Scope:</strong> Custom SaaS designed from scratch to manage room availability and bookings.</p>
-                                <p><strong class="text-primary">Impact:</strong> Structured a strict relational database that prevents double-booking overlaps, currently managing daily hotel reservations efficiently.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://hotel.technoopro.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Clinic System" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Clinic Management System</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
-                                <p><strong class="text-white">Scope:</strong> A dedicated platform built to digitize patient scheduling.</p>
-                                <p><strong class="text-primary">Impact:</strong> Delivered an automated scheduling logic that organizes daily patient flow, reducing front-desk paperwork entirely.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://clinc.technoopro.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Real Estate" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Real Estate Analytics</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Data/Web Engineer</p>
-                                <p><strong class="text-white">Scope:</strong> An analytical tool parsing property data in the Syrian market.</p>
-                                <p><strong class="text-primary">Impact:</strong> Built a data processing backend that filters and calculates pricing trends across thousands of property listings.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
-                            </div>
-                            <a href="https://real-estate.technoopro.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="TechnoPro" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">TechnoPro Platform</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Lead Developer</p>
-                                <p><strong class="text-white">Scope:</strong> Developed the digital presentation and CMS for a software services firm.</p>
-                                <p><strong class="text-primary">Impact:</strong> Created a highly optimized React frontend integrated seamlessly with a custom data management backend.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                            </div>
-                            <a href="https://technoopro.com/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-12 mb-8" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Permitt.ai Projects</h3>
-                <p class="text-sm text-slate-400 mt-2">Specialized architectural logic and canvas engines.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
-                    <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Drafting Tool" class="w-full h-full object-cover project-img">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-white">Permitt.ai Drafting Engine</h3>
-                            <div class="text-xs text-slate-300 mb-4 space-y-2">
-                                <p><strong class="text-white">Role:</strong> Core Engineer</p>
-                                <p><strong class="text-white">Scope:</strong> Developed a web-based 2D/3D architectural drafting canvas.</p>
-                                <p><strong class="text-primary">Impact:</strong> Wrote custom logic limiting uploads strictly to PDF/DXF formats for accuracy. Solved complex frontend calculation errors, ensuring a perfect 1:1 scaling for doors and windows measurements.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Canvas API</span>
-                                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
-                            </div>
-                            <a href="https://app.permitt.ai/" target="_blank" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
-                                View Project <i class="fa-solid fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-server"></i></div>
+          <h3 class="text-xl font-bold mb-2">Deployment & Stability</h3>
+          <p class="text-sm text-slate-400">Handled Linux, Nginx, SSL, and production releases to keep applications stable, public, and easy to maintain.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-20 bg-secondary/20 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Track <span class="text-primary">Record</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-darkBg p-8 rounded-xl border border-slate-700" data-aos="fade-up">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary text-xl">
-                            <i class="fa-solid fa-hammer"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white">100% Custom Built</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        I do not rely on pre-packaged templates like WordPress or Shopify. Every SaaS, platform, and API featured in this portfolio was architected and written from scratch using modern frameworks (Next.js/Node.js). I handle logic independently, guaranteeing full ownership, security, and scalability.
-                    </p>
-                </div>
-                
-                <div class="bg-darkBg p-8 rounded-xl border border-slate-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary text-xl">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Production Ready</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        My work is currently deployed in real-world environments. From managing field operations syncing data continuously, to hotel systems preventing double bookings daily, I build software that performs under actual user load, backed by solid database design.
-                    </p>
-                </div>
-            </div>
+  <section id="skills" class="py-20 bg-secondary/20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical <span class="text-primary">Stack</span></h2>
+        <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="text-xl font-bold mb-4">Frontend</h3>
+          <ul class="space-y-2 text-slate-300">
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Next.js & React.js</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> TypeScript & JavaScript (ES6+)</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Tailwind CSS & Bootstrap</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> HTML5 Canvas API</li>
+          </ul>
         </div>
-    </section>
 
-    <footer id="contact" class="bg-darkBg border-t border-slate-800 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Let's Build Your System</h2>
-            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Looking for a reliable engineer to architect and develop your platform from scratch? Let's connect.</p>
-            
-            <div class="flex justify-center gap-6 mb-10">
-                <a href="https://wa.me/9630945852707" target="_blank" class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3 rounded-lg font-semibold transition flex items-center gap-2 shadow-lg shadow-green-500/20">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> +963 0945852707
-                </a>
-                <a href="mailto:mohamadit102@gmail.com" class="border border-slate-600 hover:border-slate-400 text-white px-8 py-3 rounded-lg font-semibold transition flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> Email Me
-                </a>
-            </div>
-
-            <div class="flex justify-center space-x-6 mb-8 border-t border-slate-800 pt-8">
-                <a href="#" target="_blank" class="text-slate-400 hover:text-primary transition text-3xl"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank" class="text-slate-400 hover:text-primary transition text-3xl"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            
-            <p class="text-slate-500 text-sm">
-                &copy; 2026 Eng. Mohamad Ali. All Rights Reserved. Built from Scratch.
-            </p>
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
+          <h3 class="text-xl font-bold mb-4">Backend & Data</h3>
+          <ul class="space-y-2 text-slate-300">
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Node.js & Express.js</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> RESTful APIs & Auth</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> MySQL, MongoDB, Prisma</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Schema Design & Query Optimization</li>
+          </ul>
         </div>
-    </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 50,
-        });
-    </script>
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-primary transition" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+          <h3 class="text-xl font-bold mb-4">Ops & Delivery</h3>
+          <ul class="space-y-2 text-slate-300">
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Linux (Ubuntu) & Nginx</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Docker, PM2, Certbot</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> Git & GitHub Actions</li>
+            <li><i class="fa-solid fa-check text-primary mr-2"></i> AWS & deployment workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Production <span class="text-primary">Projects</span></h2>
+        <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+        <p class="text-slate-400 mt-4 max-w-3xl mx-auto">
+          Live systems selected for stronger hiring signal: clear scope, clear stack, and visible outcomes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chafaq Field Ops" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Chafaq Field Ops Platform</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                Built a live field-ops system that centralizes projects, tasks, reports, approvals, and photos in one workflow.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
+                <p><strong class="text-white">Visible metrics:</strong> 18 active projects, 24 reports per day, 7 pending approvals.</p>
+                <p><strong class="text-primary">Why it matters:</strong> Reduced scattered communication by making the workflow trackable in one place.</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
+              </div>
+              <a href="https://chafaq.com/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Check-in-sy" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Check-in-sy System</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                Built the backend and admin dashboard for a real-time location-tracking system.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Backend & Web Developer</p>
+                <p><strong class="text-white">Focus:</strong> Real-time APIs, dashboard logic, and operational monitoring.</p>
+                <p><strong class="text-primary">Value:</strong> Designed the full server-side workflow for live tracking events.</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Express.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
+              </div>
+              <a href="https://app.check-in-sy.com/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Promaster" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Promaster Service Portal</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                A service booking and management portal for an automotive care business.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
+                <p><strong class="text-white">Focus:</strong> Booking flow, public access, deployment stability, and routing.</p>
+                <p><strong class="text-primary">Value:</strong> Kept the production rollout stable while solving deployment and domain issues.</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Express.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
+              </div>
+              <a href="https://promaster.sa/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Foundr-x" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Foundr-x Infrastructure</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                Corporate website and production infrastructure work with deployment and server setup.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Developer & Server Admin</p>
+                <p><strong class="text-white">Focus:</strong> SSR frontend, Linux setup, Nginx, and release readiness.</p>
+                <p><strong class="text-primary">Value:</strong> Delivered a clean public-facing platform with production hosting configured from scratch.</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js (SSR)</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Linux</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Nginx</span>
+              </div>
+              <a href="https://foundr-x.com/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ropicks" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Ropicks E-Commerce</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                Custom storefront built without a heavy CMS, with independent cart and product logic.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Full-Stack Developer</p>
+                <p><strong class="text-white">Focus:</strong> Product data structure, checkout flow, and performance.</p>
+                <p><strong class="text-primary">Value:</strong> Kept the store fast and flexible with custom architecture.
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">MySQL</span>
+              </div>
+              <a href="https://ropicks.com/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-slate-800 rounded-xl border border-slate-700 project-card flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrapper h-48 bg-slate-900 shrink-0">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Permitt AI Drafting Engine" class="w-full h-full object-cover project-img" />
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold mb-3 text-white">Permitt.ai Drafting Engine</h3>
+              <p class="text-xs text-slate-300 mb-4 leading-6">
+                Browser-based drafting engine for precise architectural drawing and measurement logic.
+              </p>
+              <div class="text-xs text-slate-300 mb-4 space-y-2">
+                <p><strong class="text-white">Role:</strong> Core Engineer</p>
+                <p><strong class="text-white">Focus:</strong> Canvas API, screen-to-world mapping, shape logic, and measurement accuracy.</p>
+                <p><strong class="text-primary">Value:</strong> Solved precision issues in wall and element placement for drafting workflows.</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Next.js</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Canvas API</span>
+                <span class="text-xs bg-slate-700 text-primary px-2 py-1 rounded">Node.js</span>
+              </div>
+              <a href="https://app.permitt.ai/" target="_blank" rel="noreferrer" class="inline-block text-primary hover:text-white transition font-semibold text-sm">
+                View Live Project <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-secondary/20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Track <span class="text-primary">Record</span></h2>
+        <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-darkBg p-8 rounded-xl border border-slate-700" data-aos="fade-up">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-hammer"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Custom-Built Systems</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            The public sites I worked on show product-first delivery: TechnoPro presents 5+ completed projects and 6 clients,
+            while Chafaq exposes live operational numbers directly in the dashboard.
+          </p>
+        </div>
+
+        <div class="bg-darkBg p-8 rounded-xl border border-slate-700" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Production Ready</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            My work is deployed in real environments, with clear flows for bookings, reporting, approvals, and live data handling.
+            The goal is always the same: stable software that works under real user load.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="bg-darkBg border-t border-slate-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Let's Build Your System</h2>
+      <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+        Looking for a software engineer to build or improve a production system from scratch? Let's connect.
+      </p>
+
+      <div class="flex justify-center gap-6 mb-10 flex-wrap">
+        <a href="https://wa.me/9630945852707" target="_blank" rel="noreferrer" class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3 rounded-lg font-semibold transition flex items-center gap-2 shadow-lg shadow-green-500/20">
+          <i class="fa-brands fa-whatsapp text-xl"></i> +963 0945852707
+        </a>
+        <a href="mailto:mohamadit102@gmail.com" class="border border-slate-600 hover:border-slate-400 text-white px-8 py-3 rounded-lg font-semibold transition flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i> Email Me
+        </a>
+      </div>
+
+      <p class="text-slate-500 text-sm">
+        &copy; 2026 Eng. Mohamad Ali. All Rights Reserved. Built from Scratch.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 50 });
+  </script>
 </body>
 </html>
